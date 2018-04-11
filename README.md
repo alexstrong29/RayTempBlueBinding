@@ -2,7 +2,7 @@
 Binding for the ThermaLib SDK to connect to a RayTemp bluetooth LE scanner
 
 Add a new callback class to your main project 
-
+```C#
 public class RayTempCallbacks : Java.Lang.Object, UK.CO.Etiltd.Thermalib.ThermaLib.IClientCallbacks
     {
         //public IntPtr Handle => throw new NotImplementedException();
@@ -125,3 +125,13 @@ public class RayTempCallbacks : Java.Lang.Object, UK.CO.Etiltd.Thermalib.ThermaL
             throw new NotImplementedException();
         }
     }
+```
+
+
+Then register the above class in your MainActivity
+```C#
+   var therm = UK.CO.Etiltd.Thermalib.ThermaLib.Instance(this);
+            therm.RegisterCallbacks(new Services.RayTempCallbacks(this), "MainActivity");
+            therm.StartScanForDevices(UK.CO.Etiltd.Thermalib.ThermaLib.Transport.BluetoothLe);
+             LoadApplication(new App());
+```
