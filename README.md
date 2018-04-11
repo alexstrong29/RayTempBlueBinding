@@ -1,7 +1,7 @@
 # RayTempBlueBinding
 Binding for the ThermaLib SDK to connect to a RayTemp bluetooth LE scanner
 
-Add a new callback class to your main project 
+Add a new callback class to your Android project. This class handles each method called from the SDK.
 ```C#
 public class RayTempCallbacks : Java.Lang.Object, UK.CO.Etiltd.Thermalib.ThermaLib.IClientCallbacks
     {
